@@ -1,5 +1,3 @@
-import java.util.Random;
-
 /**
  * Class implementing a bank account.
  * <p>
@@ -13,23 +11,50 @@ public class BankAccount {
      * You may want to use this to distinguish between different kinds of accounts.
      */
     public enum BankAccountType {
+        /**
+         * Checkings.
+         */
         CHECKINGS,
+        /**
+         * Savings.
+         */
         SAVINGS,
+        /**
+         * Student.
+         */
         STUDENT,
+        /**
+         * Workplace.
+         */
         WORKPLACE
     }
 
     private int accountNumber;
     public BankAccountType accountType;
     private double accountBalance;
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
+
     private String ownerName;
     public double interestRate;
     private double interestEarned;
-
-    public BankAccount(final String name, final BankAccountType accountCategory) {
-        /*
-         * Implement this function
-         */
+    /**
+     *
+     */
+    public BankAccount(final String name, final BankAccountType accountCategory, final int accountNumber,
+                       final double accountBalance, final int interestRate) {
+        Bank.totalAccounts++;
+        this.accountType = accountCategory;
+        this.accountNumber = accountNumber;
+        this.accountBalance = accountBalance;
+        this.ownerName = ownerName;
+        this.interestRate = interestRate;
     }
 
     /*

@@ -8,7 +8,9 @@
  * @see <a href="https://cs125.cs.illinois.edu/lab/5/">Lab 5 Description</a>
  */
 public class Bank {
-
+    /**
+     *
+     */
     public String bankName;
 
     public Bank() {
@@ -42,9 +44,7 @@ public class Bank {
      * @return boolean
      */
     public boolean depositMoney(final BankAccount bankAccount, final double amount) {
-        /*
-         * Implement this function
-         */
+
     }
 
     /**
@@ -74,9 +74,7 @@ public class Bank {
      */
 
     public void changeOwnerName(final BankAccount bankAccount, final String name) {
-        /*
-         * Implement this function
-         */
+        bankAccount.setOwnerName(name);
     }
 
     public static int totalAccounts = 0;
@@ -86,9 +84,7 @@ public class Bank {
      * @return the total number of accounts
      */
     public static int getNumberOfAccount() {
-        /*
-         * Implement this function
-         */
+        return totalAccounts;
     }
 
     /**
@@ -102,8 +98,10 @@ public class Bank {
         System.out.println("Welcome to " + bank.bankName);
         System.out.println("We are excited to have you banking with us!\n\n");
 
+        int accountNumber = (int)(Math.random()*Integer.MAX_VALUE), accountBalance = 0, ownerName = "asld;fk", interestEarned
         // Create Bank Accounts
-        BankAccount account1 = new BankAccount("John Doe", BankAccount.BankAccountType.CHECKINGS);
+        BankAccount account1 = new BankAccount("John Doe", BankAccount.BankAccountType.CHECKINGS, accountNumber,
+                accountBalance, ownerName, interestEarned);
         System.out.println("Bank account for John Doe created");
 
         BankAccount account2 = new BankAccount("Jony Ive", BankAccount.BankAccountType.STUDENT);
